@@ -1,5 +1,8 @@
+let marca = "../img/marca.jpg";
+let bomba = "../img/bomba.jpg";
+let libre = "../img/libre.jpg";
 let acierto = 0;
-let error = 0;
+let falla = 0;
 // 'use strict';
 
 let btn = document.getElementById('boton');
@@ -13,10 +16,7 @@ function Comenzar(pag){
 }
 //↑ funcion donde click comenzar ↑//
 function ProbabilidadCarta(id){
-  let marca = "../img/marca.jpg";
-  let bomba = "../img/bomba.jpg";
-  let libre = "../img/libre.jpg";
-  let valor = Seleccionar();
+  // let valor = Seleccionar();
 
   // let cartas = [ 1, 2, 3, 4, 5, 6, 7, 8];
   // let CartaMarca = " ";
@@ -32,15 +32,6 @@ function ProbabilidadCarta(id){
     }
   }
   // for (var j = 0; j < cartas.length; j++) {
-  if(valor == marca){
-    Aciertos ++;
-    console.log(valor);
-  }else if (valor == libre) {
-    Falla ++;
-    // }
-  }
-  $('.acierto').html(acierto);
-  $('.error').html(error);
 
 }
 
@@ -58,7 +49,7 @@ function MostrarCartas(){
 function Seleccionar(){
   let op = document.getElementById('items').value;
   let valores;
-  if (op ==1) {
+  if (op == 1) {
     valores = document.getElementById('naipe1');
   }else if (op ==2) {
     valores = document.getElementById('naipe2');
@@ -75,5 +66,17 @@ function Seleccionar(){
   }else if (op == 8) {
     valores = document.getElementById('naipe8');
   }
+
   // document.getElementsByTagName('img').value;
+  if (op = marca){
+    acierto ++;
+    alert("valor");
+  }else if (op = libre) {
+    falla ++;
+    alert ("libre");
+  }else if (op = bomba) {
+    alert ("Bomba");
+  }
+  $('.acierto').html(acierto);
+  $('.error').html(falla);
 }
