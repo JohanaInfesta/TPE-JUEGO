@@ -43,14 +43,14 @@ a{
   text-decoration: none;
 }
 .cartas img{
-  width: 175px;
-  height: 270px;
+  width: 155px;
+  height: 250px;
 }
 .cartas{
   position: relative;
   padding-bottom: 10%;
   width: 58%;
-  left: 25%;
+  left: 18%;
   right: 25%;
 }
 .cartas-portada{
@@ -61,6 +61,9 @@ a{
   color: #037BB5;
   font-size: 2em;
 }
-/* .lista{
+table {
   float: right;
-} */
+  margin-right: 10%;
+  font-size: 1.1em;
+  color: #037bb5;
+}

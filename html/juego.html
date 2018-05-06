@@ -6,11 +6,11 @@
   <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
   <title></title>
 </head>
-<body>
+<body onload="MostrarCartas()">
   <h1>MemoTest</h1>
   <form class="lista">
-    <input type="text" name="list" list="items">
-    <datalist id="items">
+      <select id="items" onchange="Seleccionar()">
+        <option></option>
       <option value="1">Carta 1</option>
       <option value="2">Carta 2</option>
       <option value="3">Carta 3</option>
@@ -19,10 +19,27 @@
       <option value="6">Carta 6</option>
       <option value="7">Carta 7</option>
       <option value="8">Carta 8</option>
+    </select>
 
-    </datalist>
 
   </form>
+    <table>
+      <thead class="tabla">
+        <tr>
+          <th>N° De Partidas</th>
+          <th>Aciertos</th>
+          <th>Errores</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="partidas"></td>
+          <td class="acierto"></td>
+          <td class="error"></td>
+        </tr>
+      </tbody>
+    </table>
+
   <div class="cartas">
     <div class="cartas-portada">
       <img src="../img/fondos/negro.jpg" id="naipe1"alt=""> <div class="name">Carta  1 </div>
@@ -48,10 +65,9 @@
     <div class="cartas-portada">
       <img src="../img/fondos/negro.jpg" id="naipe8"alt=""> <div class="name">Carta  8 </div>
     </div>
-    <button type="button" name="button" onclick="Mostrar()"></button>
   </div>
 
-  <script type="text/javascript"src="../juego.js">
-  </script>
+  <script type="text/javascript" src="../jquery-3.2.1.min.js"></script>
+  <script type="text/javascript"src="../juego2.js"></script>
 </body>
 </html>
