@@ -3,6 +3,7 @@ let bomba = "../img/bomba.jpg";
 let libre = "../img/libre.jpg";
 let acierto = 0;
 let falla = 0;
+let partidas = 0;
 // 'use strict';
 
 let btn = document.getElementById('boton');
@@ -36,6 +37,8 @@ function ProbabilidadCarta(id){
 }
 
 function MostrarCartas(){
+  partidas++;
+
   let c1 = ProbabilidadCarta('naipe1');
   let c2 = ProbabilidadCarta('naipe2');
   let c3 = ProbabilidadCarta('naipe3');
@@ -44,11 +47,17 @@ function MostrarCartas(){
   let c6 = ProbabilidadCarta('naipe6');
   let c7 = ProbabilidadCarta('naipe7');
   let c8 = ProbabilidadCarta('naipe8');
+
+    $('.partidas').html(partidas);
 }
 
 function Seleccionar(){
   let op = document.getElementById('items').value;
-  let valores;
+  // let cartas = document.getElementsByTagName('img');
+  // for (var i = 0; i < cartas.length; i++) {
+  //   op = cartas;
+  // }
+  let valores ;
   if (op == 1) {
     valores = document.getElementById('naipe1');
   }else if (op ==2) {
@@ -66,8 +75,8 @@ function Seleccionar(){
   }else if (op == 8) {
     valores = document.getElementById('naipe8');
   }
+  document.getElementsByTagName('img').value;
 
-  // document.getElementsByTagName('img').value;
   if (op = marca){
     acierto ++;
     alert("valor");
