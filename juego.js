@@ -1,54 +1,57 @@
-'use strict';
+let marca = "img/marca.jpg";
+let bomba = "img/bomba.jpg";
+let libre = "img/libre.jpg";
+let acierto = 0;
+let falla = 0;
+let partidas = 0;
 
 let btn = document.getElementById('boton');
-let pagina = "html/juego.html";
+let paginaJuego = "html/juego.html";
+let paginaComenzar = "index.html";
 
 btn.addEventListener("click", function(e){
-  Comenzar(pagina);
+  Comenzar(paginaJuego);
 })
-function Comenzar(pag){
-  location.href = pag ;
+function Comenzar(){
+  location.href = paginaJuego ;
 }
 //↑ funcion donde click comenzar ↑//
-
 function ProbabilidadCarta(id){
-  let CartaMarca = " ";
   let random = Math.random();
   let i = document.getElementById(id);
   if (random <0.5) {
-    i.src = "../img/marca.jpg";
+    i.src ="../" + marca;
   }else {
     if (random < 0.9) {
-      i.src = "../img/libre.jpg"
+      i.src = "../" + libre;
     }else {
-      i.src = "../img/bomba.jpg"
+      i.src = "../" + bomba;
     }
   }
-  if (i.src="../img/marca.jpg") {
-    
-  }
-  setTimeout(function() {
-    i.src = "../img/fondos/negro.jpg"
-  }, 3000);
-}
-function MostrarCartas(){
-  let c1 = ProbabilidadCarta('naipe1');
-  let c2 = ProbabilidadCarta('naipe2');
-  let c3 = ProbabilidadCarta('naipe3');
-  let c4 = ProbabilidadCarta('naipe4');
-  let c5 = ProbabilidadCarta('naipe5');
-  let c6 = ProbabilidadCarta('naipe6');
-  let c7 = ProbabilidadCarta('naipe7');
-  let c8 = ProbabilidadCarta('naipe8');
 }
 
-//contador de la tabla
-//funcion de las cartas en negro + setTimeout
+function MostrarCartas(){
+  partidas++;
+  let imgClassCarta = document.getElementsByClassName('img');
+  let cantCartas =  imgClassCarta.length;
+  let array = Array();
+  for (let i = 0; i < cantCartas; i++) {
+    let id = imgClassCarta[i].getAttribute('id');
+    ProbabilidadCarta(id);
+  }
+  document.getElementById('partidas').innerHTML = partidas;
+}
 
 function Seleccionar(){
-  //valuar la datalist con las variables de las MostrarCartas
   let op = document.getElementById('items').value;
-  alert(op);
+  let imagen = document.getElementsByTagName('img');
+  for (var i = 1; i < imagen.length; i++) {
+    op == imagen;
+  }
+  console.log("op " + op);
+  console.log("imagen " + imagen);
+  document.getElementById('acierto').innerHTML = acierto;
+  document.getElementById('error').innerHTML = falla;
 }
 
 

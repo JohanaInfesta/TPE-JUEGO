@@ -45,6 +45,8 @@ a{
 .cartas img{
   width: 155px;
   height: 250px;
+  background-image: url("img/fondos/negro.jpg");
+  background-size: 155px, 250px; /* tamaño de background-image */
 }
 .cartas{
   position: relative;
@@ -56,6 +58,8 @@ a{
 .cartas-portada{
   display: inline-block;
 }
+
+
 .name{
   font-family: 'Tajawal', sans-serif;
   color: #037BB5;
@@ -66,4 +70,7 @@ table {
   margin-right: 10%;
   font-size: 1.1em;
   color: #037bb5;
+}
+tbody{
+  text-align: center;
 }
