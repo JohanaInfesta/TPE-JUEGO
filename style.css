@@ -42,11 +42,13 @@ a{
   background-image: linear-gradient(to bottom, #344047, #1294eb);
   text-decoration: none;
 }
-.cartas img{
+.cartas img, .cartas-portada{
   width: 155px;
-  height: 250px;
+  height: 232px;
+}
+.cartas-portada{
   background-image: url("img/fondos/negro.jpg");
-  background-size: 155px, 250px; /* tamaño de background-image */
+  background-size: 155px, 255px; /* tamaño de background-image */
 }
 .cartas{
   position: relative;
@@ -58,8 +60,9 @@ a{
 .cartas-portada{
   display: inline-block;
 }
-
-
+.ocultar{
+  display: none;
+}
 .name{
   font-family: 'Tajawal', sans-serif;
   color: #037BB5;

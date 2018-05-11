@@ -34,7 +34,6 @@ function MostrarCartas(){
   partidas++;
   let imgClassCarta = document.getElementsByClassName('img');
   let cantCartas =  imgClassCarta.length;
-  let array = Array();
   for (let i = 0; i < cantCartas; i++) {
     let id = imgClassCarta[i].getAttribute('id');
     ProbabilidadCarta(id);

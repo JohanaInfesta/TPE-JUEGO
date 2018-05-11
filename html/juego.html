@@ -9,63 +9,79 @@
 <body onload="MostrarCartas()">
   <h1>MemoTest</h1>
   <form class="lista">
-      <select id="items" onchange="Seleccionar()">
-        <option></option>
-      <option value="1">Carta 1</option>
-      <option value="2">Carta 2</option>
-      <option value="3">Carta 3</option>
-      <option value="4">Carta 4</option>
-      <option value="5">Carta 5</option>
-      <option value="6">Carta 6</option>
-      <option value="7">Carta 7</option>
-      <option value="8">Carta 8</option>
+    <select id="items" onchange="Seleccionar()">
+      <option></option>
+      <option value="0" class="ListVal">Carta 1</option>
+      <option value="1" class="ListVal">Carta 2</option>
+      <option value="2" class="ListVal">Carta 3</option>
+      <option value="3" class="ListVal">Carta 4</option>
+      <option value="4" class="ListVal">Carta 5</option>
+      <option value="5" class="ListVal">Carta 6</option>
+      <option value="6" class="ListVal">Carta 7</option>
+      <option value="7" class="ListVal">Carta 8</option>
     </select>
 
 
   </form>
-    <table>
-      <thead class="tabla">
-        <tr>
-          <th>N° De Partidas</th>
-          <th>Aciertos</th>
-          <th>Errores</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="partidas"></td>
-          <td id="acierto"></td>
-          <td id="error"></td>
-        </tr>
-      </tbody>
-    </table>
+  <table>
+    <thead class="tabla">
+      <tr>
+        <th>N° De Partidas</th>
+        <th>Aciertos</th>
+        <th>Errores</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="partidas"></td>
+        <td id="acierto"></td>
+        <td id="error"></td>
+      </tr>
+    </tbody>
+  </table>
 
   <div class="cartas">
     <div class="cartas-portada">
-      <img src=" " id="naipe1"alt="" onclick="imgCheck()" class="img"> <div class="name">Carta  1 </div>
+      <div class="imgCarta">
+        <img src=" " id="naipe1"alt="" > <div class="name">Carta  1 </div>
+      </div>
     </div>
     <div class="cartas-portada">
-      <img src=" " id="naipe2"alt="" onclick="imgCheck()" class="img"> <div class="name">Carta  2 </div>
+      <div class="imgCarta">
+        <img src=" " id="naipe2"alt="" > <div class="name">Carta  2 </div>
+      </div>
     </div>
     <div class="cartas-portada">
-      <img src=" " id="naipe3"alt="" onclick="imgCheck()" class="img"> <div class="name">Carta  3 </div>
+      <div class="imgCarta">
+        <img src=" " id="naipe3"alt="" > <div class="name">Carta  3 </div>
+      </div>
     </div>
     <div class="cartas-portada">
-      <img src=" " id="naipe4"alt="" onclick="imgCheck()" class="img"> <div class="name">Carta  4 </div>
+      <div class="imgCarta">
+        <img src=" " id="naipe4"alt="" > <div class="name">Carta  4 </div>
+      </div>
     </div>
     <div class="cartas-portada">
-      <img src=" " id="naipe5"alt="" onclick="imgCheck()" class="img"> <div class="name">Carta  5 </div>
+      <div class="imgCarta">
+        <img src=" " id="naipe5"alt="" > <div class="name">Carta  5 </div>
+      </div>
     </div>
     <div class="cartas-portada">
-      <img src=" " id="naipe6"alt="" onclick="imgCheck()" class="img"> <div class="name">Carta  6 </div>
+      <div class="imgCarta">
+        <img src=" " id="naipe6"alt="" > <div class="name">Carta  6 </div>
+      </div>
     </div>
     <div class="cartas-portada">
-      <img src=" " id="naipe7"alt="" onclick="imgCheck()" class="img"> <div class="name">Carta  7 </div>
+      <div class="imgCarta">
+        <img src=" " id="naipe7"alt="" > <div class="name">Carta  7 </div>
+      </div>
     </div>
     <div class="cartas-portada">
-      <img src=" " id="naipe8"alt="" onclick="imgCheck()" class="img"> <div class="name">Carta  8 </div>
+      <div class="imgCarta">
+        <img src=" " id="naipe8"alt="" > <div class="name">Carta  8 </div>
+      </div>
     </div>
   </div>
-  <script type="text/javascript"src="../juego2.js"></script>
+  <script type="text/javascript"src="../juego3.js"></script>
 </body>
 </html>
