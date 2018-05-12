@@ -1,13 +1,3 @@
-// let c1, c2, c3, c4, c5, c6, c7, c8;
-
-// funcion comenarjuego(){
-// fallas =0
-// abarrajar();
-// MostrarCartas()
-// }
-
-
-
 let paginaComenzar = "../index.html";
 let partidas = 0;
 let fallas = 0;
@@ -72,11 +62,11 @@ function SeleccionarCarta(){
   let cartas = document.querySelectorAll(".imgCarta");
 
   cartas[opcion].classList.toggle("ocultar");
-
+  opcion.disabled = "true";
   if (resultado[opcion]==0) {
     console.log("marca");
-    win.push(0);
     aciertos++;
+    win.push(0);
   }else if (resultado[opcion]==1) {
     console.log("libre");
     fallas++;
@@ -86,7 +76,7 @@ function SeleccionarCarta(){
   }
   document.getElementById('acierto').innerHTML = aciertos;
   document.getElementById('error').innerHTML = fallas;
-
+  // Ganaste();
 }
 
 function Bomba(){
@@ -95,6 +85,10 @@ function Bomba(){
     location.href = paginaComenzar;
   },2000);
 }
-function Ganaste(){
-
+// function Ganaste(){
+//   for (var i = 0; i < resultado.length; i++) {
+//     if (!(resultado[i] == 0)) {
+//
+//     }
+//   }
 }
