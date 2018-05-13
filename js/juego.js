@@ -3,7 +3,7 @@ let partidas = 0;
 let fallas = 0;
 let aciertos = 0;
 let resultado = [];
-let win = [];
+let salioMarca = 0;
 
 let paginaJuego = "html/juego.html";
 let btn = document.getElementById('boton');
@@ -24,6 +24,7 @@ function ProbabilidadCartas(id){
   if(random < 0.5){
     img.src = imagenes[0];
     resultado.push(0);
+    salioMarca++;
   }else{
     if (random < 0.9) {
       img.src = imagenes[1];
@@ -57,6 +58,7 @@ function MostrarCartas(){
 }
 
 function SeleccionarCarta(){
+  let resultadoWin = 0;
   let opcion = parseInt(document.getElementById('items').value, 10);
   console.log("opcion" + opcion);
   let cartas = document.querySelectorAll(".imgCarta");
@@ -66,29 +68,23 @@ function SeleccionarCarta(){
   if (resultado[opcion]==0) {
     console.log("marca");
     aciertos++;
-    win.push(0);
   }else if (resultado[opcion]==1) {
     console.log("libre");
     fallas++;
   }else {
     console.log("bomba");
-    Bomba();
+    alert("Bombaa ☺☻☺☻☺☻");
+    FinGame();
   }
   document.getElementById('acierto').innerHTML = aciertos;
   document.getElementById('error').innerHTML = fallas;
-  // Ganaste();
+  if (salioMarca == aciertos) {
+    alert("ganaste ♪♫♪♫");
+    FinGame();
+  }
 }
-
-function Bomba(){
-  alert("Perdiste ☻☺☻☺☻☺");
+function FinGame(){
   setTimeout(function(){
     location.href = paginaComenzar;
   },2000);
 }
-// function Ganaste(){
-//   for (var i = 0; i < resultado.length; i++) {
-//     if (!(resultado[i] == 0)) {
-//
-//     }
-//   }
-// }
