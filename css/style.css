@@ -50,6 +50,8 @@ a{
 .cartas-portada{
   background-image: url("../img/fondos/negro.jpg");
   background-size: 155px, 255px; /* tamaño de background-image */
+  margin-right: 8px;
+  margin-bottom: 35px;
 }
 .cartas{
   position: relative;
