@@ -2,15 +2,21 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
   <title></title>
 </head>
-<body onload="MostrarCartas()">
+<body>
   <h1>MemoKombat</h1>
+  <div class="boton-inicio iniciar">
+
+    <button type="button" name="button" class="btn" id="boton">Comenzar</button>
+  </div>
+
+  <div class="comenzarJuego iniciarJuego">
     <form class="lista">
       <select id="items" onchange="SeleccionarCarta()">
-        <option disabled></option>
+        <option></option>
         <option value="0" class="ListVal">Carta 1</option>
         <option value="1" class="ListVal">Carta 2</option>
         <option value="2" class="ListVal">Carta 3</option>
@@ -36,52 +42,59 @@
           <td id="acierto"></td>
           <td id="error"></td>
         </tr>
+        <tr>
+          <td>Total de errores</td>
+          <td id="totalAcierto"></td>
+          <td id="totalError"></td>
+        </tr>
       </tbody>
     </table>
 
     <div class="cartas">
       <div class="cartas-portada">
         <div class="imgCarta">
-          <img src=" " id="naipe1"alt="" > <div class="name">Carta  1 </div>
+          <img src=" " id="naipe0"> <div class="name">Carta  1 </div>
         </div>
       </div>
       <div class="cartas-portada">
         <div class="imgCarta">
-          <img src=" " id="naipe2"alt="" > <div class="name">Carta  2 </div>
+          <img src=" " id="naipe1"> <div class="name">Carta  2 </div>
         </div>
       </div>
       <div class="cartas-portada">
         <div class="imgCarta">
-          <img src=" " id="naipe3"alt="" > <div class="name">Carta  3 </div>
+          <img src=" " id="naipe2"> <div class="name">Carta  3 </div>
         </div>
       </div>
       <div class="cartas-portada">
         <div class="imgCarta">
-          <img src=" " id="naipe4"alt="" > <div class="name">Carta  4 </div>
+          <img src=" " id="naipe3"> <div class="name">Carta  4 </div>
         </div>
       </div>
       <div class="cartas-portada">
         <div class="imgCarta">
-          <img src=" " id="naipe5"alt="" > <div class="name">Carta  5 </div>
+          <img src=" " id="naipe4"> <div class="name">Carta  5 </div>
         </div>
       </div>
       <div class="cartas-portada">
         <div class="imgCarta">
-          <img src=" " id="naipe6"alt="" > <div class="name">Carta  6 </div>
+          <img src=" " id="naipe5"> <div class="name">Carta  6 </div>
         </div>
       </div>
       <div class="cartas-portada">
         <div class="imgCarta">
-          <img src=" " id="naipe7"alt="" > <div class="name">Carta  7 </div>
+          <img src=" " id="naipe6"> <div class="name">Carta  7 </div>
         </div>
       </div>
       <div class="cartas-portada">
         <div class="imgCarta">
-          <img src=" " id="naipe8"alt="" > <div class="name">Carta  8 </div>
+          <img src=" " id="naipe7"> <div class="name">Carta  8 </div>
         </div>
       </div>
     </div>
+  </div>
 
-  <script type="text/javascript"src="../js/juego.js"></script>
+  <script type="text/javascript"src="js/juego.js"></script>
+  <script type="text/javascript"src="js/jquery-3.2.1.min.js"></script>
 </body>
 </html>
