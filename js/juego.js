@@ -44,7 +44,7 @@ function MostrarCartas(){
   setTimeout ( function(){
     let cartas = document.querySelectorAll(".imgCarta");
     console.log(cartas);
-    for (var i = 0; i < cartas.length; i++) {
+    for (let i = 0; i < cartas.length; i++) {
       cartas[i].classList.toggle("ocultar");
     }
     console.log(cartas);
@@ -55,6 +55,7 @@ function MostrarCartas(){
 function SeleccionarCarta(){
   let opcion = parseInt(document.getElementById('items').value, 10);
   console.log("opcion" + opcion);
+  // $('#items option:selected').attr('disabled', 'disabled');
   let cartas = document.querySelectorAll(".imgCarta");
   cartas[opcion].classList.toggle("ocultar");
   opcion.disabled = "true";
@@ -62,17 +63,19 @@ function SeleccionarCarta(){
     console.log("marca");
     aciertos++;
     totalAciertos++;
+    if (salioMarca == aciertos) {
+      alert("ganaste ♪♫♪♫");
+      FinGame();
+    }
   }else if (resultado[opcion]==1) {
     console.log("libre");
     fallas++;
     totalFallas++;
   }else {
+    fallas++;
+    totalFallas++;
     console.log("bomba");
     alert("Bombaa ☺☻☺☻☺☻");
-    FinGame();
-  }
-  if (salioMarca == aciertos) {
-    alert("ganaste ♪♫♪♫");
     FinGame();
   }
   document.getElementById('acierto').innerHTML = aciertos;
@@ -81,11 +84,11 @@ function SeleccionarCarta(){
   document.getElementById('totalError').innerHTML = totalFallas;
 }
 function FinGame(){
-  aciertos = 0;
-  fallas =0;
+  reiniciarVariables();
+  $('.iniciar').toggle();
+  $('.comenzarJuego').toggle();
+  // $('#items').removeAttr('enable');
   setTimeout(function(){
-    $('.iniciar').toggle();
-    $('.comenzarJuego').toggle();
     let cartas = document.querySelectorAll(".imgCarta");
     console.log(cartas);
     for (var i = 0; i < cartas.length; i++) {
@@ -94,4 +97,11 @@ function FinGame(){
       }
     }
   },2000);
+}
+
+function reiniciarVariables(){
+  aciertos = 0;
+  fallas =0;
+  resultado = [];
+  salioMarca = 0;
 }
