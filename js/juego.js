@@ -1,4 +1,4 @@
-let paginaComenzar = "../index.html";
+'use strict';
 let partidas = 0;
 let fallas = 0;
 let aciertos = 0;
@@ -7,12 +7,14 @@ let salioMarca = 0;
 let totalAciertos = 0;
 let totalFallas = 0;
 
+
+let inic = document.getElementsByClassName('iniciar');
+let comenzarGame = document.getElementsByClassName('comenzarJuego');
 let btn = document.getElementById('boton');
 if (btn) {
   btn.addEventListener("click", function(){
     MostrarCartas();
-    $('.iniciar').toggle();
-    $('.comenzarJuego').toggle();
+    MostrarOcultarJuego();
   })
 }
 
@@ -55,14 +57,18 @@ function MostrarCartas(){
 function SeleccionarCarta(){
   let opcion = parseInt(document.getElementById('items').value, 10);
   console.log("opcion" + opcion);
-  // $('#items option:selected').attr('disabled', 'disabled');
+
   let cartas = document.querySelectorAll(".imgCarta");
   cartas[opcion].classList.toggle("ocultar");
-  opcion.disabled = "true";
+
   if (resultado[opcion]==0) {
+
+    let select = document.getElementById('items');
+    select.options[select.selectedIndex].disabled= true;
     console.log("marca");
     aciertos++;
     totalAciertos++;
+
     if (salioMarca == aciertos) {
       alert("ganaste ♪♫♪♫");
       FinGame();
@@ -85,9 +91,7 @@ function SeleccionarCarta(){
 }
 function FinGame(){
   reiniciarVariables();
-  $('.iniciar').toggle();
-  $('.comenzarJuego').toggle();
-  // $('#items').removeAttr('enable');
+
   setTimeout(function(){
     let cartas = document.querySelectorAll(".imgCarta");
     console.log(cartas);
@@ -96,7 +100,13 @@ function FinGame(){
         cartas[i].classList.toggle("ocultar");
       }
     }
+    habilitarOpcion();
+    MostrarOcultarJuego();
   },2000);
+}
+function MostrarOcultarJuego(){
+  inic[0].classList.toggle("iniciarJuego");
+  comenzarGame[0].classList.toggle("iniciarJuego");
 }
 
 function reiniciarVariables(){
@@ -104,4 +114,12 @@ function reiniciarVariables(){
   fallas =0;
   resultado = [];
   salioMarca = 0;
+}
+
+function habilitarOpcion(){
+  let select = document.getElementById('items');
+  for (let i = 0; i < select.length; i++) {
+      select.options[i].disabled = false;
+      select.options[i].selected = false;
+  }
 }

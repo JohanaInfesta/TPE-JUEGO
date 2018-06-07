@@ -12,7 +12,7 @@ h1{
 }
 .boton-inicio{
   margin-left: 37.8%;
-  display: inline-block;
+  /* display: inline-block; */
 }
 .btn {
   background: #0b5a8f;
